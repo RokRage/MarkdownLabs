@@ -431,6 +431,12 @@ body {
   background-color: transparent;
   outline: none;
   padding-bottom: 64vh; /* Allow scrolling past end */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.editor-textarea::-webkit-scrollbar {
+  display: none;
 }
 
 .editor-textarea::placeholder {
@@ -446,6 +452,12 @@ body {
   display: flex;
   justify-content: center;
   padding-bottom: 64vh; /* Allow scrolling past end */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.preview-pane::-webkit-scrollbar {
+  display: none;
 }
 
 .markdown-body {
