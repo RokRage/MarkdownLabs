@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" /> <!-- Indigo Primary -->
+      <stop offset="100%" style="stop-color:#9333ea;stop-opacity:1" /> <!-- Purple Accent -->
+    </linearGradient>
+  </defs>
+
+  <!-- Background: Rounded Square matching the viewBox -->
+  <!-- y starts at -960 (top) to 0 (bottom) -->
+  <rect x="0" y="-960" width="960" height="960" rx="192" ry="192" fill="url(#logoGradient)" />
+
+  <!-- Icon Path from User's File -->
+  <path fill="white" d="M200-120q-51 0-72.5-45.5T138-250l222-270v-240h-40q-17 0-28.5-11.5T280-800q0-17 11.5-28.5T320-840h320q17 0 28.5 11.5T680-800q0 17-11.5 28.5T640-760h-40v240l222 270q32 39 10.5 84.5T760-120H200Zm0-80h560L520-492v-268h-80v268L200-200Zm280-280Z"/>
+</svg>
