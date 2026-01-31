@@ -28,9 +28,10 @@
 
 body {
   font-family: var(--font-ui);
-  background-color: var(--color-bg);
   color: var(--color-text-main);
-  height: 100vh;
+  background-color: var(--color-bg);
+  height: 100vh; /* Fallback */
+  height: 100dvh;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -106,7 +107,8 @@ body {
 .app-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100vh; /* Fallback */
+  height: 100dvh;
   background-color: var(--color-bg);
 }
 
@@ -116,6 +118,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0.75rem 1.5rem;
+  padding-top: max(0.75rem, env(safe-area-inset-top));
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -444,7 +447,7 @@ body {
 .editor-pane {
   flex: 1;
   border-right: 1px solid var(--color-border);
-  background-color: var(--color-surface);
+  background-color: var(--color-bg); /* Darkened from surface white */
   display: flex;
   flex-direction: column;
 }

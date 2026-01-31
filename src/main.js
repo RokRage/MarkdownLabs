@@ -127,7 +127,7 @@ class App {
         // Editor
         this.editor = new Editor(mainContent, this.state.markdown, (newVal) => {
             this.state.markdown = newVal;
-            localStorage.setItem('markdown_content', newVal);
+            localStorage.setItem('markdown-content', newVal);
             this.preview.updateContent(newVal);
         });
 
@@ -164,7 +164,7 @@ class App {
         // Font Family
         document.getElementById('font-select').addEventListener('change', (e) => {
             this.state.fontFamily = e.target.value;
-            localStorage.setItem('font_family', this.state.fontFamily);
+            localStorage.setItem('font-family', this.state.fontFamily);
             this.preview.updateStyle(this.state.fontFamily, this.state.fontSize);
         });
 
@@ -192,7 +192,7 @@ class App {
     
     updateFontSize() {
         document.getElementById('font-size-display').textContent = `${this.state.fontSize}px`;
-        localStorage.setItem('font_size', this.state.fontSize);
+        localStorage.setItem('font-size', this.state.fontSize);
         this.preview.updateStyle(this.state.fontFamily, this.state.fontSize);
     }
 
