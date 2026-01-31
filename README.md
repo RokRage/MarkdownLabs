@@ -1,7 +1,7 @@
 <h1>
   <img src="public/pwa-192x192.png" alt="Markdown Lab Logo" height="40" align="top">
   Markdown Labs
-</h1>s
+</h1>
 
 Markdown Lab is a modern, lightweight Markdown editor and PDF converter built with **Vanilla JavaScript** and **Vite**. 
 
