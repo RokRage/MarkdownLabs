@@ -1,4 +1,4 @@
-# <img src="public/logo.svg" alt="Markdown Lab Logo" height="45" style="vertical-align: middle;"> Markdown Lab
+# <img src="public/pwa-192x192.png" alt="Markdown Lab Logo" height="45" style="vertical-align: middle;"> Markdown Labs
 
 Markdown Lab is a modern, lightweight Markdown editor and PDF converter built with **Vanilla JavaScript** and **Vite**. 
 
