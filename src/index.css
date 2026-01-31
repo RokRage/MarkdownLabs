@@ -22,6 +22,18 @@
   --color-button-hover-bg: #f1f5f9;
 }
 
+/* Force light mode variables during PDF generation */
+body.generating-pdf {
+  --color-bg: #ffffff !important;
+  --color-surface: #ffffff !important;
+  --color-text-main: #000000 !important;
+  --color-text-muted: #333333 !important;
+  --color-border: #cccccc !important;
+  --color-code-bg: #f5f5f5 !important;
+  --color-blockquote-bg: #f9f9f9 !important;
+  --color-inline-code-bg: #f5f5f5 !important;
+}
+
 body.dark-mode {
   --color-bg: #0f172a;       /* Slate 900 */
   --color-surface: #1e293b;  /* Slate 800 */
@@ -686,6 +698,24 @@ body {
   align-items: center;
 }
 
+.btn-close {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.btn-close:hover {
+  background-color: var(--color-button-hover-bg);
+  color: var(--color-text-main);
+}
+
 .modal-body {
   flex: 1;
   overflow-y: auto;
@@ -745,8 +775,9 @@ body {
 }
 .page-number {
   font-size: 0.85rem;
-  color: var(--color-text-muted);
+  color: var(--color-text-main);
   font-weight: 500;
+  margin-top: 0.25rem;
 }
 .modal-footer {
   padding: 1rem 1.5rem;
@@ -758,6 +789,11 @@ body {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
+.selection-info {
+  color: var(--color-text-main);
+  font-weight: 500;
+}
+
 .modal-actions {
   display: flex;
   gap: 0.5rem;

@@ -230,6 +230,9 @@ class App {
         // We target the markdown body specifically
         const element = document.querySelector('.markdown-body');
         
+        // Force light mode for PDF generation
+        document.body.classList.add('generating-pdf');
+        
         const opt = {
           margin:       [10, 10],
           filename:     'document.pdf', 
@@ -241,6 +244,10 @@ class App {
         html2pdf().set(opt).from(element).toPdf().get('pdf').then((pdf) => {
             const blob = pdf.output('blob');
             this.pdfModal.open(blob);
+            document.body.classList.remove('generating-pdf');
+        }).catch((err) => {
+            console.error("PDF generation failed:", err);
+            document.body.classList.remove('generating-pdf');
         });
     }
 
