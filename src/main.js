@@ -233,36 +233,5 @@ class App {
     }
 }
 
-// Debug Error Handler
-window.onerror = function(msg, url, lineNo, columnNo, error) {
-  const errorDiv = document.createElement('div');
-  errorDiv.style.position = 'fixed';
-  errorDiv.style.top = '0';
-  errorDiv.style.left = '0';
-  errorDiv.style.width = '100%';
-  errorDiv.style.background = 'red';
-  errorDiv.style.color = 'white';
-  errorDiv.style.padding = '20px';
-  errorDiv.style.zIndex = '9999';
-  errorDiv.textContent = `Error: ${msg} at ${lineNo}:${columnNo}`;
-  document.body.appendChild(errorDiv);
-  return false;
-};
-
 // Start App
-try {
-    new App();
-} catch (e) {
-    console.error(e);
-    const errorDiv = document.createElement('div');
-    errorDiv.style.position = 'fixed';
-    errorDiv.style.top = '50px';
-    errorDiv.style.left = '0';
-    errorDiv.style.width = '100%';
-    errorDiv.style.background = 'darkred';
-    errorDiv.style.color = 'white';
-    errorDiv.style.padding = '20px';
-    errorDiv.style.zIndex = '9999';
-    errorDiv.innerText = `Init Error: ${e.message}\n${e.stack}`;
-    document.body.appendChild(errorDiv);
-}
+new App();
