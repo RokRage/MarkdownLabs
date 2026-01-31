@@ -46,6 +46,7 @@ class App {
             fontFamily: localStorage.getItem('font-family') || 'Inter',
             fontSize: parseInt(localStorage.getItem('font-size') || '16', 10),
             isEcoMode: localStorage.getItem('eco-mode') === 'true',
+            isDarkMode: localStorage.getItem('dark-mode') === 'true',
             viewMode: 'split' // 'split', 'editor', 'preview' (for mobile)
         };
 
@@ -82,6 +83,9 @@ class App {
                             <h1>Markdown Labs</h1>
                         </div>
                         <div class="header-actions">
+                            <button class="btn-secondary" id="btn-theme-toggle" title="Toggle Theme">
+                                <span class="material-symbols-outlined">dark_mode</span>
+                            </button>
                             <button class="btn-secondary" id="btn-print" title="Print">
                                 <span class="material-symbols-outlined">print</span>
                                 <span class="text">Print</span>
@@ -186,6 +190,12 @@ class App {
         });
 
         // Actions
+        document.getElementById('btn-theme-toggle').addEventListener('click', () => {
+            this.state.isDarkMode = !this.state.isDarkMode;
+            localStorage.setItem('dark-mode', this.state.isDarkMode);
+            this.applyTheme();
+        });
+
         document.getElementById('btn-print').addEventListener('click', () => window.print());
         document.getElementById('btn-save-pdf').addEventListener('click', () => this.handleSaveAsPDF());
     }
@@ -198,6 +208,17 @@ class App {
 
     applyTheme() {
         const container = document.getElementById('main-container');
+        
+        // Dark Mode
+        if (this.state.isDarkMode) {
+            document.body.classList.add('dark-mode');
+            document.querySelector('#btn-theme-toggle .material-symbols-outlined').textContent = 'light_mode';
+        } else {
+            document.body.classList.remove('dark-mode');
+            document.querySelector('#btn-theme-toggle .material-symbols-outlined').textContent = 'dark_mode';
+        }
+
+        // Eco Mode
         if (this.state.isEcoMode) {
             container.classList.add('eco-mode');
         } else {
