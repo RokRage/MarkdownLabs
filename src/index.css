@@ -430,7 +430,7 @@ body {
   color: var(--color-text-main);
   background-color: transparent;
   outline: none;
-  padding-bottom: 50vh; /* Allow scrolling past end */
+  padding-bottom: 64vh; /* Allow scrolling past end */
 }
 
 .editor-textarea::placeholder {
@@ -445,7 +445,7 @@ body {
   background-color: #ffffff;
   display: flex;
   justify-content: center;
-  padding-bottom: 50vh; /* Allow scrolling past end */
+  padding-bottom: 64vh; /* Allow scrolling past end */
 }
 
 .markdown-body {
